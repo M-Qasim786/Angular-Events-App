@@ -1,0 +1,50 @@
+em{
+  color: red;
+  float: right;
+}
+.error input{
+  background-color: #E3C3C5;
+}
+form{
+  width: 50%;
+  margin-bottom: 15px;
+  border: #9F5A2D 1px solid;
+  border-radius: 5px;
+  padding: 25px 30px;
+  margin-top: 30px;
+}
+.card{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+  width:100%;
+
+}
+
+@media screen  and (max-width:1024px) {
+  form{
+    width: 70%;
+    border: none;
+  }
+
+}
+@media screen  and (max-width:700px) {
+  form{
+    width: 70%;
+  }
+
+}
+@media screen  and (max-width:450px) {
+  form{
+    width: 80%;
+  }
+
+}
+@media screen  and (max-width:360px) {
+  form{
+    width: 95%;
+  }
+
+}

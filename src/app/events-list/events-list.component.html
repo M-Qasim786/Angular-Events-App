@@ -1,0 +1,15 @@
+
+<events-app-navbar></events-app-navbar>
+<h1>Events</h1>
+<hr>
+<div class="row">
+  <div *ngFor='let event of events' class="col-md-6" >
+
+      <button class="btn btn-danger" (click)="deleteEvent(event)" ><i class="fa fa-trash" style="font-size:20px;"></i></button>
+      &nbsp;
+    <button class="btn btn-info" [routerLink]="['/update-event',event.id]" ><i class="fa fa-edit" style="font-size:20px"></i></button>
+    <events-app-thubmnail  [event]='event'></events-app-thubmnail>
+  </div>
+</div>
+
+
