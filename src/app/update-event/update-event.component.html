@@ -1,0 +1,109 @@
+<h1>Update Event</h1>
+<hr />
+<div class="col-md-6">
+  <form
+    autocomplete="off"
+    [formGroup]="updateForm"
+    (ngSubmit)="updateData(updateForm.value)"
+    novalidate
+  >
+    <div class="form-group">
+      <label for="eventName">Event Name:</label>
+      <input
+        name="name"
+        required
+        id="name"
+        type="text"
+        class="form-control"
+        placeholder="Name of your event..."
+        formControlName="name"
+      />
+    </div>
+    <div class="form-group">
+      <label for="eventDate">Event Date:</label>
+      <input
+        name="date"
+        required
+        id="eventDate"
+        type="text"
+        class="form-control"
+        placeholder="format (mm/dd/yyyy)..."
+        formControlName="date"
+      />
+    </div>
+    <div class="form-group">
+      <label for="eventTime">Event Time:</label>
+      <input
+        name="time"
+        required
+        id="eventTime"
+        type="text"
+        class="form-control"
+        placeholder="start and end time..."
+        formControlName="time"
+      />
+    </div>
+    <div class="form-group">
+      <label for="eventPrice">Event Price:</label>
+      <input
+        name="price"
+        required
+        id="eventPrice"
+        type="text"
+        type="number"
+        class="form-control"
+        placeholder="event price..."
+        formControlName="price"
+      />
+    </div>
+    <div class="form-group">
+      <label for="address">Event Location:</label>
+      <input
+        name="address"
+        id="address"
+        type="text"
+        class="form-control"
+        placeholder="Address of event..."
+        formControlName="address"
+      />
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <input
+          name="city"
+          formControlName="city"
+          id="city"
+          type="text"
+          class="form-control"
+          placeholder="City..."
+        />
+      </div>
+      <div class="col-md-6">
+        <input
+          name="country"
+          formControlName="country"
+          id="country"
+          type="text"
+          class="form-control"
+          placeholder="Country..."
+        />
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="onlineUrl">Online Url:</label>
+      <input
+        name="onlineUrl"
+        formControlName="onlineUrl"
+        id="onlineUrl"
+        type="text"
+        class="form-control"
+        placeholder="Online Url..."
+      />
+    </div>
+    <button type="submit" class="btn btn-primary">Update</button>
+    <button type="button" class="btn btn-default" (click)="cancel()">
+      Cancel
+    </button>
+  </form>
+</div>

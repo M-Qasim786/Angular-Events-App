@@ -1,0 +1,32 @@
+
+<div class="col-md-12">
+  <div class="card">
+  <form autocomplete="off"  [formGroup]="signupForm" (ngSubmit)="saveSignupForm()">
+    <h1>Sign Up</h1>
+    <hr>
+    <div class="form-group" [ngClass]="{error: !firstNameValidate()}" >
+      <label for="firstName">First Name:</label>
+      <em *ngIf="!firstNameValidate()">Required</em>
+      <input id="firstName" formControlName="firstName" type="text" class="form-control" placeholder="First Name..." />
+    </div>
+    <div class="form-group" [ngClass]="{error:!lastNameValidate()}">
+      <label for="lastName">Last Name:</label>
+      <em *ngIf="!lastNameValidate()">Required</em>
+      <input id="lastName" formControlName="lastName" type="text" class="form-control" placeholder="Last Name..." />
+    </div>
+    <div class="form-group" [ngClass]="{error: !emailValidate()}" >
+      <label for="email">Email:</label>
+      <em *ngIf="!emailValidate()">Required Valid Email</em>
+      <input id="email" formControlName="email" type="text" autocomplete="off" class="form-control" placeholder="User Name..." />
+    </div>
+    <div class="form-group" [ngClass]="{error: !passwordValidate()}">
+      <label for="password">Password:</label>
+      <em *ngIf="!passwordValidate()">Required</em>
+      <input id="password" formControlName="password" type="password" autocomplete="off" class="form-control"placeholder="Password..." />
+    </div>
+
+    <button type="submit" class="btn btn-success"[disabled]="!signupForm.valid" >Signup</button>
+  </form>
+  <a style="cursor: pointer;" (click)="backLogin()">Already account?Please Login</a>
+</div>
+</div>

@@ -1,0 +1,23 @@
+
+<div  [routerLink]="['/events-list', event.id]" class="well hoverwell thumbnail" style="min-height: 210px;">
+  <h6>{{event?.id}}</h6>
+  <h3>{{event?.name | uppercase}}</h3>
+  <div>Date: {{event?.date|date:'shortDate'}}</div>
+  <div [ngClass]="getStartTimeClass()"  [ngSwitch]="event?.time">
+    Time: {{event?.time}}
+    <span *ngSwitchCase="'8:00 am'">(Earlt Start)</span>
+    <span *ngSwitchCase="'10:00 am'">(Late Start)</span>
+    <span *ngSwitchDefault>(Normal Stat)</span>
+  </div>
+  <div>Price: {{event?.price | currency:'USD'}}</div>
+  <div *ngIf='event?.location'>
+    <span>Location: {{event?.location?.address}}</span>
+    <span> {{event?.location?.city}}, {{event?.location?.country}}</span>
+
+  </div>
+  <div [hidden]='!event?.onlineUrl'>
+    Online URL: {{event?.onlineUrl}}
+    </div>
+  </div>
+
+
